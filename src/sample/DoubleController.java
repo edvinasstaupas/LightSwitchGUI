@@ -91,7 +91,6 @@ public class DoubleController {
 
     public void onClick1() {
         if (lightSwitch.isOutput2On()) {
-
             background1.setStyle("-fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 10;");
             //background1.setStyle("-fx-background-color: #181818");
             label.setTextFill(WHITE);

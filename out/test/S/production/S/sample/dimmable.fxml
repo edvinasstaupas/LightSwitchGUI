@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.DimmableController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="background" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: #181818;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DimmableController">
+    <children>
+        <Circle fx:id="bulb" layoutX="299.0" layoutY="250.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 0;" visible="false" />
+        <Button fx:id="button" layoutX="267.0" layoutY="459.0" mnemonicParsing="false" onAction="#onClick" prefHeight="146.0" prefWidth="66.0" />
+        <Label fx:id="label" alignment="CENTER" layoutY="21.0" prefHeight="38.0" prefWidth="600.0" text="a" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Label>
+        <Ellipse fx:id="dot" fill="WHITE" layoutX="300.0" layoutY="487.0" radiusX="4.0" radiusY="6.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+        <StackPane layoutX="200.0" layoutY="150.0" prefHeight="150.0" prefWidth="200.0">
+            <children>
+                <ImageView fx:id="yellow" fitHeight="200.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../res/yellow.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="off" fitHeight="200.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../res/white.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="on" fitHeight="200.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../res/white2.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </StackPane>
+      <Slider fx:id="slider" layoutX="351.0" layoutY="462.0" max="1.0" min="0.1" onDragDetected="#onSliderChange" onDragDone="#onSliderChange" onDragDropped="#onSliderChange" onDragEntered="#onSliderChange" onDragExited="#onSliderChange" onDragOver="#onSliderChange" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" value="0.1" />
+    </children>
 </AnchorPane>
