@@ -50,7 +50,7 @@ public class FirstController {
             String tag2 = fxml.substring(0, 1);
             tag = tag2.toUpperCase(Locale.ROOT) + tag1 + " source";
         }
-        System.out.println(fxml + " " + tag);
+        //System.out.println(fxml + " " + tag);
         try {
             m.changeScene(fxml, tag);
         } catch (IOException ioException) {
