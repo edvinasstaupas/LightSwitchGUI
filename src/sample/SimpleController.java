@@ -7,8 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
+
+import java.io.IOException;
 
 import static javafx.scene.paint.Color.*;
 import static sample.Main.getTag;
@@ -71,5 +72,14 @@ public class SimpleController {
         off.setVisible(true);
         on.setVisible(false);
         yellow.setVisible(false);
+    }
+
+    public void changeScenery() throws IOException {
+        Main m = new Main();
+        try {
+            m.changeScene("sample.fxml", "sample");
+        } catch (IOException ioException) {
+            throw new RuntimeException("IO Exception in CommandLine Application", ioException);
+        }
     }
 }

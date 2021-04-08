@@ -32,7 +32,6 @@ public class FirstController {
     }
 
     @FXML
-
     public void changeScenery() throws IOException{
         Main m = new Main();
         String source = choiceBox.getValue();
@@ -50,7 +49,6 @@ public class FirstController {
             String tag2 = fxml.substring(0, 1);
             tag = tag2.toUpperCase(Locale.ROOT) + tag1 + " source";
         }
-        //System.out.println(fxml + " " + tag);
         try {
             m.changeScene(fxml, tag);
         } catch (IOException ioException) {

@@ -39,5 +39,6 @@
                 </ImageView>
             </children>
         </StackPane>
+      <Button layoutX="14.0" layoutY="661.0" mnemonicParsing="false" onAction="#changeScenery" text="Go back" />
     </children>
 </AnchorPane>

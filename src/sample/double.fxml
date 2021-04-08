@@ -64,5 +64,6 @@
             </ImageView>
          </children>
       </StackPane>
+      <Button mnemonicParsing="false" onAction="#changeScenery" text="Go back" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="655.0" />
    </children>
 </AnchorPane>

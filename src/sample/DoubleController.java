@@ -10,6 +10,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
 
+import java.io.IOException;
+
 import static javafx.scene.paint.Color.*;
 import static sample.Main.getTag;
 
@@ -74,12 +76,11 @@ public class DoubleController {
             on.setVisible(false);
             yellow.setVisible(false);
         } else {
-            background.setStyle("-fx-background-color: radial-gradient(focus-distance 0% , center 30% 30% , radius 100% , #FFFF00, #000000)");
+            background.setStyle("-fx-background-color: radial-gradient(focus-distance 0% , center 30% 30% , radius 150% , #FFFF00, #000000)");
             if(lightSwitch.isOutput2On())
                 label.setTextFill(BLACK);
             else
                 label.setTextFill(WHITE);
-            //background.setStyle("-fx-background-color: #BEBEBE");
             button.setStyle("-fx-background-color: #FFFFFF");
             dot.setFill(LIGHTSTEELBLUE);
             lightSwitch.turnOnOutput1();
@@ -91,8 +92,7 @@ public class DoubleController {
 
     public void onClick1() {
         if (lightSwitch.isOutput2On()) {
-            background1.setStyle("-fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 10;");
-            //background1.setStyle("-fx-background-color: #181818");
+            background1.setStyle("-fx-background-color: #181818");
             label.setTextFill(WHITE);
             button1.setStyle("-fx-background-color: #282828");
             dot1.setFill(GREENYELLOW);
@@ -106,7 +106,6 @@ public class DoubleController {
                 label.setTextFill(BLACK);
             else
                 label.setTextFill(WHITE);
-            //background.setStyle("-fx-background-color: #BEBEBE");
             button1.setStyle("-fx-background-color: #FFFFFF");
             dot1.setFill(LIGHTSTEELBLUE);
             lightSwitch.turnOnOutput2();
@@ -128,5 +127,14 @@ public class DoubleController {
         off1.setVisible(true);
         on1.setVisible(false);
         yellow1.setVisible(false);
+    }
+
+    public void changeScenery() throws IOException {
+        Main m = new Main();
+        try {
+            m.changeScene("sample.fxml", "sample");
+        } catch (IOException ioException) {
+            throw new RuntimeException("IO Exception in CommandLine Application", ioException);
+        }
     }
 }

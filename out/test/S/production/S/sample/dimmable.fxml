@@ -41,5 +41,6 @@
             </children>
         </StackPane>
       <Slider fx:id="slider" layoutX="351.0" layoutY="462.0" max="1.0" min="0.1" onDragDetected="#onSliderChange" onDragDone="#onSliderChange" onDragDropped="#onSliderChange" onDragEntered="#onSliderChange" onDragExited="#onSliderChange" onDragOver="#onSliderChange" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" value="0.1" />
+      <Button layoutX="14.0" layoutY="660.0" mnemonicParsing="false" onAction="#changeScenery" text="Go back" />
     </children>
 </AnchorPane>

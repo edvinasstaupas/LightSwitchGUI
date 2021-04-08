@@ -11,8 +11,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
+
+import java.io.IOException;
 
 import static javafx.scene.paint.Color.*;
 import static sample.Main.getTag;
@@ -91,7 +92,7 @@ public class DimmableController {
                 if (lightSwitch.isOn()) {
                     i = i * 100 + 20;
                     int intensity = (int) i;
-                    String style = String.format("-fx-background-color: radial-gradient(focus-distance %d* , center %d* %d* , radius %d* , #FFFF00, #000000)", 0, 50, 30, intensity);
+                    String style = String.format("-fx-background-color: radial-gradient(focus-distance 0%% , center 50%% 30%% , radius %d%% , #FFFF00, #000000)", intensity);
                     style = style.replace('*', '%');
                     background.setStyle(style);
                     if (lightSwitch.getIntensity() > 0.5)
@@ -113,5 +114,14 @@ public class DimmableController {
         off.setVisible(true);
         on.setVisible(false);
         yellow.setVisible(false);
+    }
+
+    public void changeScenery() throws IOException {
+        Main m = new Main();
+        try {
+            m.changeScene("sample.fxml", "sample");
+        } catch (IOException ioException) {
+            throw new RuntimeException("IO Exception in CommandLine Application", ioException);
+        }
     }
 }
